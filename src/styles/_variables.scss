@@ -1,0 +1,15 @@
+$niyyah-bg: #0D1410;
+$niyyah-primary: #1A251C;
+$niyyah-secondary: #303C2F;
+$niyyah-tertiary: #556B50;
+$niyyah-text: #E8EBE9;
+$niyyah-text-secondary: #798263;
+
+:root {
+  --color-bg: #{$niyyah-bg};
+  --color-primary: #{$niyyah-primary};
+  --color-secondary: #{$niyyah-secondary};
+  --color-tertiary: #{$niyyah-tertiary};
+  --color-text-primary: #{$niyyah-text};
+  --color-text-secondary: #{$niyyah-text-secondary};
+}
