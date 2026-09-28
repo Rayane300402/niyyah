@@ -301,9 +301,7 @@ Current structure:
 
 ```text
 layout/
-├── app-shell/
-├── desktop/
-└── mobile/
+└── app-shell/
 ```
 
 The layout layer is expected to manage:
@@ -474,8 +472,8 @@ Current approval status:
 - `core/models` organization: **Pending review**
 - `core/services` organization: **Pending review**
 - `core/state` organization: **Pending state-management decision**
-- Layout strategy: **Provisionally approved**
-- Desktop/mobile layout split: **Pending review**
+- Layout strategy: **Approved**
+- Desktop/mobile layout split: **Not used, one responsive UI**
 - Routing architecture: **Pending final decision**
 - State-management architecture: **Pending final decision**
 - Final folder structure approval: **Pending**
@@ -486,15 +484,96 @@ The architecture will be considered finalized only after routing and state manag
 
 ## 7. State Management
 
-The application's state-management architecture is currently being finalized.
+Niyyah uses Angular Signals for reactive application state.
 
-Angular Signals are being considered as the primary reactive state mechanism, particularly for shared application state such as fasting records, calendar state, settings, and application initialization.
+The initial store boundaries are:
 
-Persistent application data will be stored locally in SQLite.
+```text
+AppStore
+→ application initialization
+→ loading/readiness state
+→ startup errors
+→ controls when Intro can leave for Home
 
-Temporary UI state will remain in memory.
+FastingStore
+→ fasting records
+→ fasting statuses
+→ recurring fasting plans
+→ qada / missed-day balance
+→ Ramadan fasting mode
 
-The final state-management approach will be documented after the architecture decision is complete.
+CalendarStore
+→ selected dates
+→ current calendar context
+→ Gregorian / Hijri conversion
+→ Hijri corrections
+→ fasting occasions such as Monday/Thursday and White Days
+
+SettingsStore
+→ persisted application preferences
+→ Ramadan auto/manual preference
+→ Hijri correction preferences
+→ notification settings
+→ other user settings
+```
+
+Persistent application data is stored in SQLite.
+
+The startup hydration flow is:
+
+```text
+Intro renders
+    ↓
+Logo animation starts
+    +
+Application initialization starts
+    ↓
+Open SQLite
+    ↓
+Load settings
+    ↓
+Hydrate SettingsStore
+    ↓
+Load fasting data
+    ↓
+Hydrate FastingStore
+    ↓
+Load calendar corrections/context
+    ↓
+Hydrate CalendarStore
+    ↓
+AppStore marks the application as ready
+    ↓
+Wait for the minimum Intro animation duration if necessary
+    ↓
+Navigate to Home
+```
+
+If essential local initialization fails:
+
+```text
+Initialization fails
+    ↓
+Remain on Intro
+    ↓
+Expose an error/retry state
+```
+
+The application must not navigate to Home with partially loaded essential local data.
+
+External content such as Hadith or Dua data is considered non-essential and must not block application startup.
+
+Pages consume shared stores rather than maintaining duplicate copies of persistent domain state.
+
+Angular dependency injection is used for dependency resolution.
+
+Custom application providers are registered centrally through:
+
+```text
+core/providers.ts
+```
+
+This replaces the need for a custom service locator pattern.
 
 ---
 

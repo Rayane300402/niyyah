@@ -36,17 +36,17 @@
 - [x] Agree to record make-up intention without asking why a day was missed.
 - [x] Agree on calculated Hijri dates with a user correction control in Profile/Settings as the design direction.
 - [x] Identify the global floating `+` menu and pencil Create action; no bottom navigation bar.
-- [ ] Finalize the responsibilities and exact contents of `core/`, `features/`, and `layout/` (the architecture is **not** finalized).
-- [ ] Decide where fasting/calendar domain logic, repository interfaces, API clients, and state belong.
-- [ ] Finalize Intro initialization and Start App routing; decide whether the floating menu is hidden on Intro.
-- [ ] Finalize Create entry-point behavior: global pencil, calendar selected date, Home quick action, and prefilled intention/date.
-- [ ] Decide which calendar actions save immediately vs open Create for confirmation.
-- [ ] Define the fasting status lifecycle (planned, in progress, completed, missed/not completed, cancelled).
-- [ ] Define missed-day balance accounting, adjustments, and whether original missed dates are needed.
-- [ ] Define recurring-plan semantics vs individual planned/completed fasting records.
-- [ ] Decide when Ramadan mode appears, whether activation needs confirmation, and how Ramadan records are handled.
-- [ ] Agree on the calculated Hijri method, month-specific correction UI, and month-boundary rules.
-- [ ] Finalize Signals store boundaries and application hydration/error-handling strategy.
+- [x] Finalize the responsibilities and exact contents of `core/`, `features/`, and `layout/` (the architecture is **not** finalized).
+- [x] Decide where fasting/calendar domain logic, repository interfaces, API clients, and state belong.
+- [x] Finalize Intro initialization and automatic Intro → Home routing; floating menu hidden on Intro.
+- [x] Finalize Create entry-point behavior: global pencil, calendar selected date, Home quick action, and prefilled intention/date.
+- [x] Decide which calendar actions save immediately vs open Create for confirmation.
+- [x] Define the fasting status lifecycle (planned, in progress, completed, missed/not completed, cancelled).
+- [x] Define missed-day balance accounting, adjustments, and whether original missed dates are needed.
+- [x] Define recurring-plan semantics vs individual planned/completed fasting records.
+- [x] Decide when Ramadan mode appears, whether activation needs confirmation, and how Ramadan records are handled.
+- [x] Agree on the calculated Hijri method, month-specific correction UI, and month-boundary rules.
+- [x] Finalize Signals store boundaries and application hydration/error-handling strategy.
 
 ## Phase 3 — Folder structure and routing
 
