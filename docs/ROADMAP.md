@@ -22,11 +22,11 @@
 ### Verify or finish before relying on it
 
 - [ ] Verify SQLite plugin permissions and a successful local open/query on desktop; installing the driver alone is not database initialization.
-- [ ] Verify the final native icon was generated successfully from a square source and is configured in Tauri.
-- [ ] Confirm Angular's build includes `src/assets/` and test image/SVG paths in the packaged app.
-- [ ] Test a Windows production build/installer.
-- [ ] Confirm Outfit is bundled locally so the offline-first app does not depend on Google Fonts at runtime.
-- [ ] Confirm actual `tauri.conf.json` sizing matches the documented target values.
+- [x] Verify the final native icon was generated successfully from a square source and is configured in Tauri.
+- [x] Confirm Angular's build includes `src/assets/` and test image/SVG paths in the packaged app.
+- [x] Test a Windows production build/installer.
+- [x] Confirm Outfit is bundled locally so the offline-first app does not depend on Google Fonts at runtime.
+- [x] Confirm actual `tauri.conf.json` sizing matches the documented target values.
 
 ## Phase 2 — Product and architecture decisions (discussion first)
 
