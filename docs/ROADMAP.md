@@ -36,24 +36,26 @@
 - [x] Agree to record make-up intention without asking why a day was missed.
 - [x] Agree on calculated Hijri dates with a user correction control in Profile/Settings as the design direction.
 - [x] Identify the global floating `+` menu and pencil Create action; no bottom navigation bar.
-- [x] Finalize the responsibilities and exact contents of `core/`, `features/`, and `layout/` (the architecture is **not** finalized).
+- [x] Finalize the responsibilities and exact contents of `core/`, `features/`, and `layout/`.
 - [x] Decide where fasting/calendar domain logic, repository interfaces, API clients, and state belong.
 - [x] Finalize Intro initialization and automatic Intro → Home routing; floating menu hidden on Intro.
-- [x] Finalize Create entry-point behavior: global pencil, calendar selected date, Home quick action, and prefilled intention/date.
+- [x] Finalize Create entry-point behavior: blank Create from global pencil/Home, selected-date prefill from Calendar, and existing-data prefill for edit/reschedule.
 - [x] Decide which calendar actions save immediately vs open Create for confirmation.
-- [x] Define the fasting status lifecycle (planned, in progress, completed, missed/not completed, cancelled).
+- [x] Define the fasting status lifecycle (planned, in-progress, completed, not-completed, cancelled).
 - [x] Define missed-day balance accounting, adjustments, and whether original missed dates are needed.
 - [x] Define recurring-plan semantics vs individual planned/completed fasting records.
 - [x] Decide when Ramadan mode appears, whether activation needs confirmation, and how Ramadan records are handled.
 - [x] Agree on the calculated Hijri method, month-specific correction UI, and month-boundary rules.
 - [x] Finalize Signals store boundaries and application hydration/error-handling strategy.
+- [x] Set up GSAP
 
 ## Phase 3 — Folder structure and routing
 
-- [ ] Create the **agreed** folder structure only after Phase 2 discussion.
-- [ ] Keep reusable visual components shared and page-exclusive widgets with their respective pages.
-- [ ] Build the Intro → Start App → Home navigation flow, gated by essential local-data readiness.
-- [ ] Configure routes for Home, Calendar, Create, and Profile/Settings.
+- [x] Create the **agreed** folder structure only after Phase 2 discussion.
+- [x] Keep reusable visual components shared and page-exclusive widgets with their respective pages.
+- [x] Build the Intro visual shell, local asset loading, responsive layout, and initial GSAP animation.
+- [ ] Connect Intro completion to AppStore readiness and automatic Home navigation.
+- [x] Configure routes for Home, Calendar, Create, and Profile/Settings.
 - [ ] Define optional Create navigation context and date/intention prefill, including direct navigation and back behavior.
 - [ ] Handle unknown routes and navigation errors.
 
@@ -77,7 +79,7 @@
 - [ ] Build the global floating `+` menu with Home, Calendar, pencil/Create, Profile, and close actions.
 - [ ] Keep menu position independent of page scroll; close on navigation; check touch and keyboard accessibility.
 - [ ] Build shared buttons, navigation controls, and cards from the Niyyah theme.
-- [ ] Implement the intro animation and Start App button, keeping animation brief and optional to skip.
+- [ ] Implement the intro animation and automatic tranistion to Home after essential initialization.
 - [ ] Establish consistent page loading, empty, and error states.
 - [ ] Finish typography sizing progressively as UI screens are implemented.
 
@@ -110,7 +112,7 @@
 - [ ] Implement optional API clients and locally cached/offline content fallback.
 - [ ] Confirm whether prayer/fasting-time calculation or notifications are in scope; do not assume an API is required for core offline use.
 - [ ] If agreed, implement notifications/preferences and test platform permissions.
-- [ ] Add restrained GSAP intro/scroll animations **after** the core UI; prefer CSS for simple transitions.
+- [ ] Add restrained GSAP animations to remaining screens after the core UI; prefer CSS for simple transitions.
 - [ ] Respect reduced-motion preferences and test keyboard/touch/screen-reader interaction.
 - [ ] Review Arabic/English typography, directionality, contrast, and small-device layouts.
 

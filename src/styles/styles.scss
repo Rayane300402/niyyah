@@ -1,5 +1,10 @@
-@import './variables';
-@import './bootstrap-overrides';
-@import 'bootstrap/scss/bootstrap';
-@import './typography';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "./variables";
+@import "./bootstrap-overrides";
+@import "bootstrap/scss/bootstrap";
+@import "./typography";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.no-interaction {
+  pointer-events: none;
+  user-select: none;
+}
