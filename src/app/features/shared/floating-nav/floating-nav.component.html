@@ -1,1 +1,21 @@
-<p>floating-nav works!</p>
+<nav class="floating-nav" [class.open]="isOpen()" aria-label="Main navigation">
+    <button class="nav-action nav-home" type="button" aria-label="Home" (click)="navigateTo('/home')">
+        <i class="bi bi-house"></i>
+    </button>
+
+    <button class="nav-action nav-calendar" type="button" aria-label="Calendar" (click)="navigateTo('/calendar')">
+        <i class="bi bi-calendar3"></i>
+    </button>
+
+    <button class="nav-action nav-profile" type="button" aria-label="Profile" (click)="navigateTo('/profile')">
+        <i class="bi bi-person"></i>
+    </button>
+
+    <button class="nav-action nav-create" type="button" aria-label="Create" (click)="navigateTo('/create')">
+        <i class="bi bi-pencil"></i>
+    </button>
+
+    <button class="nav-toggle" type="button"  [attr.aria-expanded]="isOpen()" aria-label="Toggle navigation" (click)="toggleMenu()">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+</nav>
