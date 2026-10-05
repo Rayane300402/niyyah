@@ -1,0 +1,26 @@
+.page-header {
+    width: 100%;
+
+    padding: 2.5rem var(--page-gutter) 0;
+}
+
+.page-title {
+    font-weight: 700;
+}
+
+.page-subtitles {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-subtitle{
+    color: var( --color-secondary);
+    margin: 0;
+}
+
+.page-subtitle-secondary{
+     color: var( --color-tertiary);
+     opacity: 0.8;
+     margin: 0;
+}

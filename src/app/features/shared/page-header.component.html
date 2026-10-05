@@ -1,0 +1,19 @@
+<header class="page-header">
+    <h1 class="page-title">
+        {{ title }}
+    </h1>
+
+    <div class="page-subtitles">
+        @if (subtitle) {
+        <p class="page-subtitle">
+            {{ subtitle }}
+        </p>
+        }
+        @if (secondarySubtitle) {
+        <p class="page-subtitle page-subtitle-secondary">
+            {{ secondarySubtitle }}
+        </p>
+        }
+    </div>
+
+</header>

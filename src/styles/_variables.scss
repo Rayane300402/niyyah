@@ -1,8 +1,8 @@
-$niyyah-bg: #0D1410;
-$niyyah-primary: #1A251C;
-$niyyah-secondary: #303C2F;
-$niyyah-tertiary: #556B50;
-$niyyah-text: #E8EBE9;
+$niyyah-bg: #0d1410;
+$niyyah-primary: #1a251c;
+$niyyah-secondary: #303c2f;
+$niyyah-tertiary: #556b50;
+$niyyah-text: #e8ebe9;
 $niyyah-text-secondary: #798263;
 
 :root {
@@ -12,4 +12,5 @@ $niyyah-text-secondary: #798263;
   --color-tertiary: #{$niyyah-tertiary};
   --color-text-primary: #{$niyyah-text};
   --color-text-secondary: #{$niyyah-text-secondary};
+  --page-gutter: 2.5rem;
 }

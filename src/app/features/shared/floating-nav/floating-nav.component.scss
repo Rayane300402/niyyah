@@ -1,7 +1,8 @@
 .floating-nav {
   position: fixed;
-  right: 2.5rem;
-  bottom: 2.5rem;
+
+  right: var(--page-gutter);
+  bottom: var(--page-gutter);
 
   width: 240px;
   height: 220px;
