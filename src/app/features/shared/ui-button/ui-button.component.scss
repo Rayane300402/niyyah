@@ -1,0 +1,77 @@
+.ui-button {
+  width: clamp(250px, 28vw, 280px);
+  min-height: 56px;
+
+  padding: 0.75rem 1.75rem;
+
+  border-radius: 4px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    filter 140ms ease,
+    transform 120ms ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active:not(:disabled) {
+      filter: brightness(0.9);
+      transform: scale(0.98);
+    }
+  }
+
+  // Variants
+
+  &.ui-button-primary {
+    border: 1px solid var(--color-tertiary);
+
+    background: var(--color-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  &.ui-button-outline {
+    border: 1px solid var(--color-tertiary);
+
+    background: transparent;
+    color: var(--color-text-primary);
+  }
+
+  &.ui-button-danger {
+    border: 1px solid var(--color-danger);
+
+    background: transparent;
+    color: var(--color-danger);
+  }
+
+  // Full-width card / modal action
+
+  &.ui-button-full {
+    width: 100%;
+    min-height: 40px;
+
+    padding: 0.45rem 1rem;
+
+    font-size: 1rem;
+  }
+}

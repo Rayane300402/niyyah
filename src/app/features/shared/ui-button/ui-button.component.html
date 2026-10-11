@@ -1,1 +1,16 @@
-<p>ui-button works!</p>
+<button
+  type="button"
+  class="ui-button"
+  [class.ui-button-primary]="variant === 'primary'"
+  [class.ui-button-outline]="variant === 'outline'"
+  [class.ui-button-danger]="variant === 'danger'"
+   [class.ui-button-full]="fullWidth"
+  [disabled]="disabled"
+  (click)="buttonClick.emit()"
+>
+  @if (icon) {
+    <i [class]="icon"></i>
+  }
+
+  <ng-content />
+</button>

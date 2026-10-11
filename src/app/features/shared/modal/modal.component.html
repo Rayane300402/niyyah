@@ -1,0 +1,29 @@
+@if (isOpen) {
+<div class="modal-backdrop-custom" (click)="cancel.emit()">
+
+    <div class="confirmation-modal" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
+
+        <div class="modal-content-custom">
+            <h2 class="modal-title-custom">
+                {{ title }}
+            </h2>
+
+            <p class="modal-message">
+                {{ message }}
+            </p>
+        </div>
+
+        <div class="modal-actions">
+            <app-ui-button variant="primary" [fullWidth]="true" (buttonClick)="confirm.emit()">
+                {{ confirmText }}
+            </app-ui-button>
+
+            <app-ui-button variant="outline" [fullWidth]="true" (buttonClick)="cancel.emit()">
+                {{ cancelText }}
+            </app-ui-button>
+        </div>
+
+    </div>
+
+</div>
+}

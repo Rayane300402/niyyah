@@ -1,0 +1,54 @@
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--page-gutter);
+
+  background: rgba(0, 0, 0, 0.55);
+
+  z-index: 2000;
+}
+
+.confirmation-modal {
+  width: min(100%, 460px);
+
+  padding: 1.25rem;
+
+  background: var(--color-primary);
+
+  border: 1px solid var(--color-tertiary);
+  border-radius: 4px;
+}
+
+.modal-content-custom {
+  margin-bottom: 1.25rem;
+}
+
+.modal-title-custom {
+  margin: 0 0 0.5rem;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.modal-message {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}

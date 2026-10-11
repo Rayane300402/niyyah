@@ -1,1 +1,24 @@
-<p>fasting-action works!</p>
+@if (!isFastingUi) {
+  <app-ui-button
+    variant="primary"
+    (buttonClick)="openConfirmation()"
+  >
+    Start Fasting Today
+  </app-ui-button>
+} @else {
+  <app-ui-button
+    variant="outline"
+    (buttonClick)="openConfirmation()"
+  >
+    End Current Fast
+  </app-ui-button>
+}
+
+<app-modal 
+    [isOpen]="isConfirmationOpen"
+    [title]="isFastingUi ? 'End fasting today?' : 'Start fasting today?'"
+    [message]="isFastingUi ? 'This will mark today\'s fast as not completed.' : 'This will count today as a full fasting day.'"
+    [confirmText]="isFastingUi ? 'Yes, End Fast' : 'Yes, Start Fast'"
+    cancelText="Cancel"
+    (confirm)="isFastingUi ? confirmEndFast() : confirmStartFast()"
+    (cancel)="closeConfirmation()" /> 
