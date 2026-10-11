@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PageHeaderComponent } from '../shared/page-header.component';
+import { PageHeaderComponent } from '../shared/page-header/page-header.component';
 
 @Component({
   selector: 'app-create-page',

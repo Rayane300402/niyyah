@@ -56,8 +56,9 @@
 - [x] Build the Intro visual shell, local asset loading, responsive layout, and initial GSAP animation.
 - [ ] Connect Intro completion to AppStore readiness and automatic Home navigation.
 - [x] Configure routes for Home, Calendar, Create, and Profile/Settings.
-- [ ] Define optional Create navigation context and date/intention prefill, including direct navigation and back behavior.
-- [ ] Handle unknown routes and navigation errors.
+- [ ] Implement Create navigation context and date/intention prefill, including direct navigation and back behavior.
+- [x] Add fallback handling for unknown routes.
+- [ ] Handle navigation failures/errors gracefully.
 
 ## Phase 4 — State, SQLite, and core domain behavior
 
@@ -75,11 +76,14 @@
 
 ## Phase 5 — Shared shell and UI foundations
 
-- [ ] Implement responsive desktop/mobile app shell and vertical scrolling for content taller than the viewport.
-- [ ] Build the global floating `+` menu with Home, Calendar, pencil/Create, Profile, and close actions.
-- [ ] Keep menu position independent of page scroll; close on navigation; check touch and keyboard accessibility.
+## Phase 5 — Shared shell and UI foundations
+
+- [x] Implement the shared desktop app shell for the four main screens.
+- [ ] Verify responsive/mobile shell behavior and vertical scrolling for long pages.
+- [x] Build the global floating `+` menu with Home, Calendar, pencil/Create, Profile, and close actions.
+- [ ] Verify floating menu scroll behavior, close-on-navigation behavior, touch, and keyboard accessibility.
+- [x] Build a shared page header supporting title, subtitle, and optional secondary subtitle.
 - [ ] Build shared buttons, navigation controls, and cards from the Niyyah theme.
-- [ ] Implement the intro animation and automatic tranistion to Home after essential initialization.
 - [ ] Establish consistent page loading, empty, and error states.
 - [ ] Finish typography sizing progressively as UI screens are implemented.
 
