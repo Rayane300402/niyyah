@@ -294,7 +294,13 @@ Home displays:
 
 The countdown is shown regardless of whether the user has confirmed that they are fasting today.
 
-Fajr and Maghrib times come from a prayer-time source that will be selected and documented separately.
+Fajr and Maghrib timings initially come from the AlAdhan API.
+
+During current desktop development, Tripoli, Lebanon is used as temporary test location data.
+
+The final application will not hardcode Tripoli. Location will later come from the user's persisted settings. If no usable location preference exists, the application will require location setup before location-dependent prayer timings are used.
+
+Prayer-time retrieval is separate from the countdown component. The API service retrieves timing data; Home coordinates the data; the Maghrib countdown only receives Fajr and Maghrib timestamps and renders the countdown/progress UI.
 
 The countdown must derive remaining time from actual timestamps rather than decrementing a stored counter, so sleep, backgrounding, or application suspension does not cause timer drift.
 
@@ -1047,14 +1053,17 @@ This provides the centralized dependency-registration style without implementing
 
 Routing and the shared application shell are established.
 
-Current implementation work focuses on shared UI foundations and the Home screen, followed by real fasting state, persistence, and calendar integration.
+Current work is static-first UI development. Screens should be brought close to their final visual structure before fasting-domain persistence and shared state are connected.
 
 Immediate priorities:
 
-- complete Home fasting-time UI
-- choose and integrate Fajr/Maghrib timing source
-- connect Home actions to shared fasting state
-- continue reusable UI extraction only where repeated patterns are proven
+- finish the real Fajr/Maghrib countdown on Home
+- complete the remaining Home cards using static content/data
+- wire Home quick-action routes to Calendar and Create
+- complete Calendar static UI
+- complete Create static UI
+- continue extracting reusable UI only when repeated patterns are proven
+- defer real fasting state, SQLite persistence, and cross-screen domain integration until the main screen UI structures are approved
 
 ---
 

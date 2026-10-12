@@ -90,17 +90,18 @@
 ## Phase 6 — Screens and fasting workflows
 
 - [x] Home: build current-time display and Start/End fasting action UI with reusable confirmation modal.
-- [ ] Home: connect Start/End actions to real fasting state and persistence.
-- [ ] Home: implement Fajr-to-Maghrib countdown and animated progress ring using real prayer times.
-- [ ] Home: implement fasting progress summary and quick actions.
-- [ ] Home: Tasbih card and optional Hadith/Dua content with offline fallback.
-- [ ] Calendar: Gregorian/Hijri date display, fasting markers/legend, date selection, and selected-day actions.
-- [ ] Create: single-date fast, prefilled date from Calendar, explicit intention selection, and save/edit feedback.
-- [ ] Create: missed-day balance entry and make-up fast tracking.
-- [ ] Create: recurring fasting schedule controls with distinction between suggestions and confirmed plans.
-- [ ] Profile/Settings: statistics, preferences, Hijri correction, and data-management controls.
-- [ ] Verify a fast created or changed from **any** entry point appears correctly on Home and Calendar.
-- [ ] Ensure passing dates/occasions never silently assigns a voluntary or make-up intention.
+- [x] Home: build temporary shared fasting-status UI state between Start/End action and status label.
+- [ ] Home: complete Fajr-to-Maghrib countdown and animated progress ring using real prayer times.
+- [ ] Home: build static fasting progress summary.
+- [ ] Home: build static Hadith/content card.
+- [ ] Home: build static Tasbih card.
+- [ ] Home: build Actions card and route "Plan a voluntary fast" → `/create` and "View fasting calendar" → `/calendar`.
+- [ ] Calendar: complete static calendar UI without selected-day action modal.
+- [ ] Create: complete static Create UI.
+- [ ] Profile/Settings: complete remaining static Profile UI.
+- [ ] Connect Start/End actions and Home status to real fasting state and persistence.
+- [ ] Connect screen data to shared domain state after static UI is approved.
+- [ ] Verify a fast created or changed from any entry point appears correctly on Home and Calendar.
 
 ## Phase 7 — Hijri calendar, occasions, and Ramadan
 
@@ -117,10 +118,11 @@
 
 - [ ] Choose Dua/Hadith data sources and document their content, licensing, attribution, and availability constraints.
 - [ ] Implement optional API clients and locally cached/offline content fallback.
-- [ ] Research and choose a reliable prayer-time source for Fajr and Maghrib, including location, calculation-method, timezone, offline, and failure behavior.
+- [x] Select AlAdhan as the initial external source for Fajr and Maghrib timings.
+- [ ] Complete AlAdhan prayer-time integration for the Home countdown.
+- [ ] Define calculation-method, user-location, timezone, offline-cache, and API-failure behavior.
 - [ ] Implement Fajr/Maghrib retrieval and local fallback/caching for the Home countdown.
 - [ ] Implement notification preferences and test platform permissions.
-- [ ] If agreed, implement notifications/preferences and test platform permissions.
 - [ ] Add restrained GSAP animations to remaining screens after the core UI; prefer CSS for simple transitions.
 - [ ] Respect reduced-motion preferences and test keyboard/touch/screen-reader interaction.
 - [ ] Review Arabic/English typography, directionality, contrast, and small-device layouts.
