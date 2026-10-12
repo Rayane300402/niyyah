@@ -7,11 +7,16 @@
     <section class="fasting-status-section center">
         <div class="fasting-control-group center">
             <app-current-time />
-            <app-fasting-action />
+            <app-fasting-action 
+             [isFasting]="isFastingUi"
+        (isFastingChange)="isFastingUi = $event" />
         </div>
 
         @if (prayerTimes){
             <app-maghrib-countdown [fajrTime]="prayerTimes.fajr" [maghribTime]="prayerTimes.maghrib" />
         }
+    </section>
+    <section class="fasting-text-section center">
+        <app-fasting-status [isFasting]='isFastingUi' />
     </section>
 </section>

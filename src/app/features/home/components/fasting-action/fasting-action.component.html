@@ -1,4 +1,4 @@
-@if (!isFastingUi) {
+@if (!isFasting) {
   <app-ui-button
     variant="primary"
     (buttonClick)="openConfirmation()"
@@ -16,9 +16,9 @@
 
 <app-modal 
     [isOpen]="isConfirmationOpen"
-    [title]="isFastingUi ? 'End fasting today?' : 'Start fasting today?'"
-    [message]="isFastingUi ? 'This will mark today\'s fast as not completed.' : 'This will count today as a full fasting day.'"
-    [confirmText]="isFastingUi ? 'Yes, End Fast' : 'Yes, Start Fast'"
+    [title]="isFasting ? 'End fasting today?' : 'Start fasting today?'"
+    [message]="isFasting ? 'This will mark today\'s fast as not completed.' : 'This will count today as a full fasting day.'"
+    [confirmText]="isFasting ? 'Yes, End Fast' : 'Yes, Start Fast'"
     cancelText="Cancel"
-    (confirm)="isFastingUi ? confirmEndFast() : confirmStartFast()"
+    (confirm)="isFasting ? confirmEndFast() : confirmStartFast()"
     (cancel)="closeConfirmation()" /> 

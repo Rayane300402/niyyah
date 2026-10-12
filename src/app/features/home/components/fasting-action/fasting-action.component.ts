@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UiButtonComponent } from '../../../shared/ui-button/ui-button.component';
 import { ModalComponent } from '../../../shared/modal/modal.component';
 
@@ -9,8 +9,11 @@ import { ModalComponent } from '../../../shared/modal/modal.component';
   styleUrl: './fasting-action.component.scss'
 })
 export class FastingActionComponent {
+  @Input() isFasting = false;
+
+  @Output() isFastingChange = new EventEmitter<boolean>();
+
   isConfirmationOpen = false;
-  isFastingUi = false;
 
   openConfirmation(): void {
     this.isConfirmationOpen = true;
@@ -20,15 +23,21 @@ export class FastingActionComponent {
     this.isConfirmationOpen = false;
   }
 
+  confirmAction(): void {
+    this.isFasting
+      ? this.confirmEndFast()
+      : this.confirmStartFast();
+  }
+
   confirmStartFast(): void {
     this.isConfirmationOpen = false;
-    this.isFastingUi = true;
+    this.isFastingChange.emit(true);
 
     //TODO: Fasting logic
   }
 
   confirmEndFast(): void {
     this.isConfirmationOpen = false;
-    this.isFastingUi = false;
+    this.isFastingChange.emit(false);
   }
 }
