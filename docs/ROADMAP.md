@@ -76,20 +76,23 @@
 
 ## Phase 5 — Shared shell and UI foundations
 
-## Phase 5 — Shared shell and UI foundations
-
 - [x] Implement the shared desktop app shell for the four main screens.
 - [ ] Verify responsive/mobile shell behavior and vertical scrolling for long pages.
 - [x] Build the global floating `+` menu with Home, Calendar, pencil/Create, Profile, and close actions.
 - [ ] Verify floating menu scroll behavior, close-on-navigation behavior, touch, and keyboard accessibility.
 - [x] Build a shared page header supporting title, subtitle, and optional secondary subtitle.
-- [ ] Build shared buttons, navigation controls, and cards from the Niyyah theme.
+- [x] Build the shared UI button with primary, outline, danger, full-width, hover, and touch interaction states.
+- [x] Build a reusable confirmation modal with confirm/cancel actions and outside-click dismissal.
+- [ ] Build remaining shared navigation controls and reusable card foundations as screens require them.
 - [ ] Establish consistent page loading, empty, and error states.
 - [ ] Finish typography sizing progressively as UI screens are implemented.
 
 ## Phase 6 — Screens and fasting workflows
 
-- [ ] Home: today's fasting status, user-confirmed Start/Finish flow, countdown, progress, and quick actions.
+- [x] Home: build current-time display and Start/End fasting action UI with reusable confirmation modal.
+- [ ] Home: connect Start/End actions to real fasting state and persistence.
+- [ ] Home: implement Fajr-to-Maghrib countdown and animated progress ring using real prayer times.
+- [ ] Home: implement fasting progress summary and quick actions.
 - [ ] Home: Tasbih card and optional Hadith/Dua content with offline fallback.
 - [ ] Calendar: Gregorian/Hijri date display, fasting markers/legend, date selection, and selected-day actions.
 - [ ] Create: single-date fast, prefilled date from Calendar, explicit intention selection, and save/edit feedback.
@@ -114,7 +117,9 @@
 
 - [ ] Choose Dua/Hadith data sources and document their content, licensing, attribution, and availability constraints.
 - [ ] Implement optional API clients and locally cached/offline content fallback.
-- [ ] Confirm whether prayer/fasting-time calculation or notifications are in scope; do not assume an API is required for core offline use.
+- [ ] Research and choose a reliable prayer-time source for Fajr and Maghrib, including location, calculation-method, timezone, offline, and failure behavior.
+- [ ] Implement Fajr/Maghrib retrieval and local fallback/caching for the Home countdown.
+- [ ] Implement notification preferences and test platform permissions.
 - [ ] If agreed, implement notifications/preferences and test platform permissions.
 - [ ] Add restrained GSAP animations to remaining screens after the core UI; prefer CSS for simple transitions.
 - [ ] Respect reduced-motion preferences and test keyboard/touch/screen-reader interaction.

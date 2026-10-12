@@ -263,6 +263,43 @@ A voluntary fast that is not completed does **not** automatically create make-up
 
 ---
 
+### Home Daily Confirmation Behavior
+
+When the user selects **Start Fasting Today**, Niyyah treats the action as confirmation that the user has been fasting for the current fasting day. The time at which the user taps the button is not treated as the beginning of the fast.
+
+The action requires confirmation before today's record becomes `in-progress`.
+
+While today's fast is `in-progress`, Home offers an **End Current Fast** action. Confirming this changes the record to `not-completed`.
+
+When Maghrib is reached, Niyyah must not automatically mark an `in-progress` fast as completed.
+
+If the user does not confirm completion before leaving the day, the record remains `in-progress`. On a later launch, an `in-progress` record whose Gregorian date is already in the past is treated by the UI as requiring completion confirmation.
+
+The user can then confirm:
+
+- completed → `completed`
+- not completed → `not-completed`
+
+“Needs confirmation” is initially a derived UI condition, not a separate persisted fasting status.
+
+---
+
+### Home Fasting-Time Display
+
+Home displays:
+
+- the user's current local time
+- time remaining until Maghrib
+- a circular progress indicator representing progression through the fasting period
+
+The countdown is shown regardless of whether the user has confirmed that they are fasting today.
+
+Fajr and Maghrib times come from a prayer-time source that will be selected and documented separately.
+
+The countdown must derive remaining time from actual timestamps rather than decrementing a stored counter, so sleep, backgrounding, or application suspension does not cause timer drift.
+
+---
+
 ## 4. Create Entry Points and Calendar Actions
 
 Niyyah uses **one Create page**.
@@ -1008,24 +1045,16 @@ This provides the centralized dependency-registration style without implementing
 
 ## 13. Current Implementation Direction
 
-Phase 2 architecture and product behavior required for routing are sufficiently defined.
+Routing and the shared application shell are established.
 
-The next implementation phase is routing.
+Current implementation work focuses on shared UI foundations and the Home screen, followed by real fasting state, persistence, and calendar integration.
 
-Phase 3 will implement:
+Immediate priorities:
 
-- Intro route
-- automatic Intro → Home transition
-- shared application shell
-- Home route
-- Calendar route
-- Create route
-- Profile / Settings route
-- Calendar → Create selected-date context
-- back-navigation behavior
-- unknown-route handling
-
-Detailed database schemas, migrations, API integration, and full domain implementations will be added incrementally after routing.
+- complete Home fasting-time UI
+- choose and integrate Fajr/Maghrib timing source
+- connect Home actions to shared fasting state
+- continue reusable UI extraction only where repeated patterns are proven
 
 ---
 
