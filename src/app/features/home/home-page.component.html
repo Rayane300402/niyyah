@@ -10,6 +10,8 @@
             <app-fasting-action />
         </div>
 
-       <app-maghrib-countdown [fajrTime]="fajrTime" [maghribTime]="maghribTime" />
+        @if (prayerTimes){
+            <app-maghrib-countdown [fajrTime]="prayerTimes.fajr" [maghribTime]="prayerTimes.maghrib" />
+        }
     </section>
 </section>
